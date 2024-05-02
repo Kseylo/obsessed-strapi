@@ -382,7 +382,6 @@ export interface ApiQuestQuest extends Schema.CollectionType {
     backgroundColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    description: Attribute.Text & Attribute.Required;
     descriptionColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
@@ -392,6 +391,8 @@ export interface ApiQuestQuest extends Schema.CollectionType {
     titleColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
+    rules: Attribute.Blocks;
+    description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

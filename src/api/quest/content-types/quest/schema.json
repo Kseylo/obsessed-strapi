@@ -35,10 +35,6 @@
       "customField": "plugin::color-picker.color",
       "required": true
     },
-    "description": {
-      "type": "text",
-      "required": true
-    },
     "descriptionColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
@@ -56,6 +52,12 @@
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "required": true,
       "customField": "plugin::color-picker.color"
+    },
+    "rules": {
+      "type": "blocks"
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }
