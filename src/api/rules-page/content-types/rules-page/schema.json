@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "rules_pages",
+  "info": {
+    "singularName": "rules-page",
+    "pluralName": "rules-pages",
+    "displayName": "Rules Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rules": {
+      "type": "blocks"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

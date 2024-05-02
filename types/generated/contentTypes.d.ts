@@ -411,6 +411,38 @@ export interface ApiQuestQuest extends Schema.CollectionType {
   };
 }
 
+export interface ApiRulesPageRulesPage extends Schema.SingleType {
+  collectionName: 'rules_pages';
+  info: {
+    singularName: 'rules-page';
+    pluralName: 'rules-pages';
+    displayName: 'Rules Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    rules: Attribute.Blocks;
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rules-page.rules-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rules-page.rules-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -848,6 +880,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::quest.quest': ApiQuestQuest;
+      'api::rules-page.rules-page': ApiRulesPageRulesPage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
