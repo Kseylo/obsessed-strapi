@@ -362,72 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageHomePage extends Schema.SingleType {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'Home Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    questHeader: Attribute.Component<'header.zagolovok'>;
-    questList: Attribute.Component<'quest-card.kartochka-kvesta', true>;
-    lootHeader: Attribute.Component<'header.zagolovok'>;
-    lootList: Attribute.Component<'loot-card.kartochka-luta', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRulesPageRulesPage extends Schema.SingleType {
-  collectionName: 'rules_pages';
-  info: {
-    singularName: 'rules-page';
-    pluralName: 'rules-pages';
-    displayName: 'Rules Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    rulesHeader: Attribute.Component<'header.zagolovok'>;
-    rules: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::rules-page.rules-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::rules-page.rules-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -854,6 +788,124 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_pages';
+  info: {
+    singularName: 'home-page';
+    pluralName: 'home-pages';
+    displayName: 'Home Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    questHeader: Attribute.Component<'header.zagolovok'>;
+    questList: Attribute.Component<'quest-card.kartochka-kvesta', true>;
+    lootHeader: Attribute.Component<'header.zagolovok'>;
+    lootList: Attribute.Component<'loot-card.kartochka-luta', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLootLoot extends Schema.CollectionType {
+  collectionName: 'loots';
+  info: {
+    singularName: 'loot';
+    pluralName: 'loots';
+    displayName: 'Loot';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Loot: Attribute.Component<'loot-card.kartochka-luta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::loot.loot', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::loot.loot', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiQuestQuest extends Schema.CollectionType {
+  collectionName: 'quests';
+  info: {
+    singularName: 'quest';
+    pluralName: 'quests';
+    displayName: 'Quest';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Quest: Attribute.Component<'quest-card.kartochka-kvesta'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::quest.quest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::quest.quest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRulesPageRulesPage extends Schema.SingleType {
+  collectionName: 'rules_pages';
+  info: {
+    singularName: 'rules-page';
+    pluralName: 'rules-pages';
+    displayName: 'Rules Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    rulesHeader: Attribute.Component<'header.zagolovok'>;
+    rules: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rules-page.rules-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rules-page.rules-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -864,8 +916,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::home-page.home-page': ApiHomePageHomePage;
-      'api::rules-page.rules-page': ApiRulesPageRulesPage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -874,6 +924,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::loot.loot': ApiLootLoot;
+      'api::quest.quest': ApiQuestQuest;
+      'api::rules-page.rules-page': ApiRulesPageRulesPage;
     }
   }
 }
