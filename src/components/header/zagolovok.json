@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_header_zagolovok",
+  "info": {
+    "displayName": "Заголовок"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "titleBackgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

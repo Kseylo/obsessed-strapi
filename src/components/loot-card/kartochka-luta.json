@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_loot_card_kartochka_luta",
+  "info": {
+    "displayName": "Карточка лута"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,56 +1,45 @@
 {
-  "kind": "collectionType",
-  "collectionName": "quests",
+  "collectionName": "components_quest_card_kartochka_kvesta",
   "info": {
-    "singularName": "quest",
-    "pluralName": "quests",
-    "displayName": "Quest",
+    "displayName": "Карточка квеста",
     "description": ""
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "isWeekly": {
-      "type": "boolean",
-      "required": true,
-      "default": false
+      "type": "boolean"
     },
     "illustration": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
-        "images"
-      ]
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     },
     "backgroundColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color",
-      "required": true
+      "customField": "plugin::color-picker.color"
     },
     "descriptionColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color",
-      "required": true
+      "customField": "plugin::color-picker.color"
     },
     "descriptionBackgroundColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color",
-      "required": true
+      "customField": "plugin::color-picker.color"
     },
     "titleColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "required": true,
       "customField": "plugin::color-picker.color"
     },
     "rules": {

@@ -12,11 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "rulesHeader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.zagolovok"
+    },
     "rules": {
       "type": "blocks"
-    },
-    "title": {
-      "type": "string"
     }
   }
 }
