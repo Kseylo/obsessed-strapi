@@ -22,12 +22,12 @@
       "required": true
     },
     "illustration": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "backgroundColor": {
       "type": "customField",
@@ -52,12 +52,10 @@
       "customField": "plugin::color-picker.color"
     },
     "rules": {
-      "type": "richtext",
-      "required": true
+      "type": "blocks"
     },
     "description": {
-      "type": "richtext",
-      "required": true
+      "type": "blocks"
     }
   }
 }
