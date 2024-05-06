@@ -7,10 +7,12 @@ export interface HeaderZagolovok extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     titleColor: Attribute.String &
+      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
     titleBackgroundColor: Attribute.String &
+      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
@@ -33,19 +35,25 @@ export interface QuestCardKartochkaKvesta extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
-    isWeekly: Attribute.Boolean;
-    illustration: Attribute.Media;
+    title: Attribute.String & Attribute.Required;
+    isWeekly: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    illustration: Attribute.Media & Attribute.Required;
     backgroundColor: Attribute.String &
+      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
     descriptionColor: Attribute.String &
+      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
     descriptionBackgroundColor: Attribute.String &
+      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
     titleColor: Attribute.String &
+      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    rules: Attribute.Blocks;
-    description: Attribute.Blocks;
+    rules: Attribute.Blocks & Attribute.Required;
+    description: Attribute.Blocks & Attribute.Required;
   };
 }
 
