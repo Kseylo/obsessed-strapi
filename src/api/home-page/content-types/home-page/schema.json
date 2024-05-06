@@ -17,20 +17,10 @@
       "repeatable": false,
       "component": "header.zagolovok"
     },
-    "questList": {
-      "type": "component",
-      "repeatable": true,
-      "component": "quest-card.kartochka-kvesta"
-    },
     "lootHeader": {
       "type": "component",
       "repeatable": false,
       "component": "header.zagolovok"
-    },
-    "lootList": {
-      "type": "component",
-      "repeatable": true,
-      "component": "loot-card.kartochka-luta"
     }
   }
 }

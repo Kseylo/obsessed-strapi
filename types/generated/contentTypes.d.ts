@@ -801,9 +801,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
   attributes: {
     questHeader: Attribute.Component<'header.zagolovok'>;
-    questList: Attribute.Component<'quest-card.kartochka-kvesta', true>;
     lootHeader: Attribute.Component<'header.zagolovok'>;
-    lootList: Attribute.Component<'loot-card.kartochka-luta', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
