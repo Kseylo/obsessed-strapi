@@ -828,12 +828,26 @@ export interface ApiLootLoot extends Schema.CollectionType {
     singularName: 'loot';
     pluralName: 'loots';
     displayName: 'Loot';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Loot: Attribute.Component<'loot-card.kartochka-luta'>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A'>;
+    titleColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    titleBackgroundColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    illustration: Attribute.Media & Attribute.Required;
+    illustrationBackgroundColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    href: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -850,12 +864,29 @@ export interface ApiQuestQuest extends Schema.CollectionType {
     singularName: 'quest';
     pluralName: 'quests';
     displayName: 'Quest';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Quest: Attribute.Component<'quest-card.kartochka-kvesta'>;
+    title: Attribute.String & Attribute.Required;
+    isWeekly: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    illustration: Attribute.Media & Attribute.Required;
+    backgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    descriptionColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    descriptionBackgroundColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    titleColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    rules: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

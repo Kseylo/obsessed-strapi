@@ -4,17 +4,48 @@
   "info": {
     "singularName": "loot",
     "pluralName": "loots",
-    "displayName": "Loot"
+    "displayName": "Loot",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Loot": {
-      "type": "component",
-      "repeatable": false,
-      "component": "loot-card.kartochka-luta"
+    "title": {
+      "type": "string",
+      "default": "Заголовок",
+      "required": true
+    },
+    "titleColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
+    },
+    "titleBackgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
+    },
+    "illustration": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "illustrationBackgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
     }
   }
 }
