@@ -1,7 +1,8 @@
 {
   "collectionName": "components_loot_card_kartochka_luta",
   "info": {
-    "displayName": "Карточка лута"
+    "displayName": "LootCard",
+    "description": ""
   },
   "options": {},
   "attributes": {

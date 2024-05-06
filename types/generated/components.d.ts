@@ -3,7 +3,8 @@ import type { Schema, Attribute } from '@strapi/strapi';
 export interface HeaderZagolovok extends Schema.Component {
   collectionName: 'components_header_zagolovok';
   info: {
-    displayName: '\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A';
+    displayName: 'Header';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -17,7 +18,8 @@ export interface HeaderZagolovok extends Schema.Component {
 export interface LootCardKartochkaLuta extends Schema.Component {
   collectionName: 'components_loot_card_kartochka_luta';
   info: {
-    displayName: '\u041A\u0430\u0440\u0442\u043E\u0447\u043A\u0430 \u043B\u0443\u0442\u0430';
+    displayName: 'LootCard';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -27,7 +29,7 @@ export interface LootCardKartochkaLuta extends Schema.Component {
 export interface QuestCardKartochkaKvesta extends Schema.Component {
   collectionName: 'components_quest_card_kartochka_kvesta';
   info: {
-    displayName: '\u041A\u0430\u0440\u0442\u043E\u0447\u043A\u0430 \u043A\u0432\u0435\u0441\u0442\u0430';
+    displayName: 'QuestCard';
     description: '';
   };
   attributes: {
