@@ -24,7 +24,16 @@ export interface LootCardKartochkaLuta extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
+    titleColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    titleBackgroundColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    illustration: Attribute.Media & Attribute.Required;
+    illustrationBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
