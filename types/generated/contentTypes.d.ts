@@ -802,6 +802,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   attributes: {
     questHeader: Attribute.Component<'header.zagolovok'>;
     lootHeader: Attribute.Component<'header.zagolovok'>;
+    weeklyQuestHeader: Attribute.Component<'header.zagolovok'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
