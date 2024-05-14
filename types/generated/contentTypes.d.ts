@@ -844,8 +844,6 @@ export interface ApiLootLoot extends Schema.CollectionType {
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
     href: Attribute.String & Attribute.Required;
-    textColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
