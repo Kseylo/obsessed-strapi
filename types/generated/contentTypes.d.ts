@@ -873,8 +873,8 @@ export interface ApiQuestQuest extends Schema.CollectionType {
     illustration: Attribute.Media & Attribute.Required;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    rules: Attribute.Blocks & Attribute.Required;
-    description: Attribute.Blocks;
+    rules: Attribute.Blocks;
+    description: Attribute.Blocks & Attribute.Required;
     date: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

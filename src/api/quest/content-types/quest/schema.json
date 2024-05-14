@@ -36,11 +36,11 @@
     },
     "rules": {
       "type": "blocks",
-      "required": true
+      "required": false
     },
     "description": {
       "type": "blocks",
-      "required": false
+      "required": true
     },
     "date": {
       "type": "string"
