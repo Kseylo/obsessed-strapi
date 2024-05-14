@@ -11,9 +11,6 @@ export interface HeaderZagolovok extends Schema.Component {
     titleColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    titleBackgroundColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
