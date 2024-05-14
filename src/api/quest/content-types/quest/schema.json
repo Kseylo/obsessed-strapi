@@ -35,10 +35,12 @@
       "customField": "plugin::color-picker.color"
     },
     "rules": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
     "description": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": false
     },
     "date": {
       "type": "string"
