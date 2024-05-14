@@ -878,6 +878,9 @@ export interface ApiQuestQuest extends Schema.CollectionType {
     rules: Attribute.Blocks & Attribute.Required;
     description: Attribute.Blocks & Attribute.Required;
     date: Attribute.String;
+    textColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
