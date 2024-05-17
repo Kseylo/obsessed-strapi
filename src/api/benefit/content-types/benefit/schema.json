@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "benefits",
+  "info": {
+    "singularName": "benefit",
+    "pluralName": "benefits",
+    "displayName": "Benefit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Заголовок"
+    },
+    "titleColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "required": true
+    },
+    "illustration": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "illustrationColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
+    },
+    "praise": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

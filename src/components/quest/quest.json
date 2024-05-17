@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_quest_quests",
+  "info": {
+    "displayName": "Quest"
+  },
+  "options": {},
+  "attributes": {
+    "quests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quest.quest"
+    }
+  }
+}

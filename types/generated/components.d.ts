@@ -14,10 +14,21 @@ export interface HeaderZagolovok extends Schema.Component {
   };
 }
 
+export interface QuestQuest extends Schema.Component {
+  collectionName: 'components_quest_quests';
+  info: {
+    displayName: 'Quest';
+  };
+  attributes: {
+    quests: Attribute.Relation<'quest.quest', 'oneToMany', 'api::quest.quest'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'header.zagolovok': HeaderZagolovok;
+      'quest.quest': QuestQuest;
     }
   }
 }

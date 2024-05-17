@@ -26,6 +26,11 @@
       "type": "component",
       "repeatable": false,
       "component": "header.zagolovok"
+    },
+    "benefitHeader": {
+      "type": "component",
+      "repeatable": false,
+      "component": "header.zagolovok"
     }
   }
 }

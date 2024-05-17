@@ -788,6 +788,47 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBenefitBenefit extends Schema.CollectionType {
+  collectionName: 'benefits';
+  info: {
+    singularName: 'benefit';
+    pluralName: 'benefits';
+    displayName: 'Benefit';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0417\u0430\u0433\u043E\u043B\u043E\u0432\u043E\u043A'>;
+    titleColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    illustration: Attribute.Media & Attribute.Required;
+    illustrationColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    praise: Attribute.Integer & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::benefit.benefit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::benefit.benefit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -803,6 +844,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     questHeader: Attribute.Component<'header.zagolovok'>;
     lootHeader: Attribute.Component<'header.zagolovok'>;
     weeklyQuestHeader: Attribute.Component<'header.zagolovok'>;
+    benefitHeader: Attribute.Component<'header.zagolovok'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -947,6 +989,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::benefit.benefit': ApiBenefitBenefit;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::loot.loot': ApiLootLoot;
       'api::quest.quest': ApiQuestQuest;
